@@ -1,0 +1,519 @@
+{
+	"info": {
+		"_postman_id": "2c6ca407-259f-4d1b-8a2d-743daa2ca84e",
+		"name": "Library Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32096306"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Admin User Creation",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": [
+								{
+									"key": "isSecretBase64Encoded",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "algorithm",
+									"value": "HS256",
+									"type": "string"
+								},
+								{
+									"key": "payload",
+									"value": "{}",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "queryParamKey",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "header",
+									"value": "{}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc0MTY4MzY1NCwiZXhwIjoxNzQxNjk4MDU0fQ._xMNyas-pM9dvBFXJEUKG46hfzZrD86BpwmWDzzDe_g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Member\", \n    \"email\": \"skrafikulislam22730@gmail.com\", \n    \"phone\": \"1234567898\", \n    \"role\": \"Member\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin User Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc0MTY4NDYzNSwiZXhwIjoxNzQxNjk5MDM1fQ.eX9LJek2GDBTvyjVYuDsefBK67YP3ZUEJabV7ygz8-M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Member\", \n    \"email\": \"skrafikulam22730@gmail.com\", \n    \"phone\": \"1234567898\", \n    \"role\": \"Member\",\n    \"isConfirmed\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin User Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc0MTY4MzY1NCwiZXhwIjoxNzQxNjk4MDU0fQ._xMNyas-pM9dvBFXJEUKG46hfzZrD86BpwmWDzzDe_g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/users/0999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"0999"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Admin Fetch Books",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsInJvbGUiOiJMaWJyYXJpYW4iLCJpYXQiOjE3NDE2ODYxMTYsImV4cCI6MTc0MTcwMDUxNn0.xmFnXNd6SrNGJ4sM-dOoVTAx45Ud5EHr-u8-hPRQQrM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Add Books",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc0MTY4NTU1MSwiZXhwIjoxNzQxNjk5OTUxfQ.bpvr71rmXLT9I1YYHKe9QO2sNRRm9ldCpQZOVIVkvPE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"title\": \"Book-5\", \n\"author\": \"Author-5\", \n\"isbn\": \"87658\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Update Books",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc0MTY4NTU1MSwiZXhwIjoxNzQxNjk5OTUxfQ.bpvr71rmXLT9I1YYHKe9QO2sNRRm9ldCpQZOVIVkvPE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"title\": \"Book-1\", \n\"author\": \"Author-1\", \n\"isbn\": \"87654\" ,\n\"quantity\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/books/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"books",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Delete Books",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc0MTY4NTU1MSwiZXhwIjoxNzQxNjk5OTUxfQ.bpvr71rmXLT9I1YYHKe9QO2sNRRm9ldCpQZOVIVkvPE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/books/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"books",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Member Fetch Books",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsInJvbGUiOiJNZW1iZXIiLCJpYXQiOjE3NDE2ODYxNDYsImV4cCI6MTc0MTcwMDU0Nn0.Z45v3o0s0Y5w2D1XMjQRemdqPd25hz59trgGiA6TMM8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Librarian Fetch Books",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsInJvbGUiOiJMaWJyYXJpYW4iLCJpYXQiOjE3NDE2ODYyNDgsImV4cCI6MTc0MTcwMDY0OH0.b3QUIG-bv1ubJqy85pLMu4vTIcEbL7cPof0Fld8epP8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BorrowedBooks",
+			"item": [
+				{
+					"name": "Borrow Book by Member",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsInJvbGUiOiJNZW1iZXIiLCJpYXQiOjE3NDE2ODcwODksImV4cCI6MTc0MTcwMTQ4OX0.yFLu4Y3v6-EazB9HjlVHQiheIVl-Gh1eowY_2XzW43A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/borrowBooks/borrow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"borrowBooks",
+								"borrow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Return Book by Member",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsInJvbGUiOiJNZW1iZXIiLCJpYXQiOjE3NDE2ODcwODksImV4cCI6MTc0MTcwMTQ4OX0.yFLu4Y3v6-EazB9HjlVHQiheIVl-Gh1eowY_2XzW43A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/borrowBooks/return",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"borrowBooks",
+								"return"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Borrowing/Returning by Librarian or Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsInJvbGUiOiJMaWJyYXJpYW4iLCJpYXQiOjE3NDE2ODc4NTcsImV4cCI6MTc0MTcwMjI1N30.vi0XoyzCHE7eMoLgqhBvbKyCeepK-ZzY-UhYmxoALvY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 13,\n    \"bookId\": 1, \n    \"action\": \"return\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/borrowBooks/record",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"borrowBooks",
+								"record"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register a User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Admin-User-Test\",\n    \"email\": \"jimmyricher211@gmail.com\",\n    \"phone\": \"9064281142\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login a User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\n//     \"email\": \"jimmyricher211@gmail.com\",\n//     \"password\": \"Admin-User-Testjimmyricher2111142\"\n// }\n// this is a Librarian Email Password\n// {\n//     \"email\": \"peselo9290@framitag.com\",\n//     \"password\": \"Librarianpeselo92904321\"\n// }\n// This is a Member Email Password\n{\n    \"email\": \"jimmyricher211@gmail.com\",\n    \"password\": \"Admin-User-Testjimmyricher2111142\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
